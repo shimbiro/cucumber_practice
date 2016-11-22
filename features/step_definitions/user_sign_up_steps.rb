@@ -14,15 +14,12 @@ When(/^I fill in the correct information$/) do
 end
 
 Then(/^I should be signed up$/) do
-  expect(page).to have_content('Sign Up!')
+  expect(page).to have_content('Account successfully created')
 end
 
 Given(/^am an existing user$/) do
-  visit signup_path
+FactoryGirl.create(:user, email: 'my@email.com')
 end
-
 Then(/^I can not register again$/) do
   
 end
-
-
