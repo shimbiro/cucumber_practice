@@ -15,11 +15,12 @@ end
 
 Then(/^I should be signed up$/) do
   expect(page).to have_content('Account successfully created')
+  expect(User.last.email).to eq 'my@email.com'
 end
 
 Given(/^am an existing user$/) do
 FactoryGirl.create(:user, email: 'my@email.com')
 end
 Then(/^I can not register again$/) do
-  
+  expect(page).to have_content('Email already exists')
 end
