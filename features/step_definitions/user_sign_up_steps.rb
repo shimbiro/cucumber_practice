@@ -16,7 +16,7 @@ end
 Then(/^I should be signed up$/) do
   expect(page).to have_content('Account successfully created')
   expect(User.last.email).to eq 'my@email.com'
-  expect(page).to have_content('Email already exists')
+  expect(page).not_to have_content('Email already exists')
 end
 
 Given(/^am an existing user$/) do
