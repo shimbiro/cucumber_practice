@@ -17,18 +17,24 @@ When(/^I fill in the correct information$/) do
 end
 
 Then(/^I should be signed up$/) do
-	
+  
   expect(page).to have_content('Account successfully created')
-  expect(form_for.error_explanation).to eq "Email can't be blank"
-  expect(page).to have_content("Username can't be blank")
-  expect(page).to have_content("Password can't be blank")
-  expect(page).to have_content("Password confirm can't be blank")
+
   expect(User.last.email).to eq 'my@email.com'
+  expect(page).to have_content :error_explanation
+  # expect(page).to have_content("Email can't be blank")
+  # expect(page).to have_content("Username can't be blank")
+  # expect(page).to have_content("Password can't be blank")
+  # expect(page).to have_content("Password confirm can't be blank")
+
+  
   
   
 end
 
 Given(/^am an existing user$/) do
+	visit login_path
+	expect(page).to have_content :error_explanation
 	FactoryGirl.create(:user, email: 'my@email.com')
 end
 Then(/^I can not register again$/) do
