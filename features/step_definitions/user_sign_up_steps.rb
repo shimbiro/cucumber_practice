@@ -34,8 +34,11 @@ end
 
 Given(/^am an existing user$/) do
 	visit login_path
-	expect(page).to have_content :error_explanation
-	FactoryGirl.create(:user, email: 'my@email.com')
+	fill_in 'Email', with: 'my@email.com'
+	fill_in 'Password', with: 'qwerty'
+	# expect(User.last.email).to eq 'my@email.com'
+	# expect(page).to have_content :error_explanation
+	# FactoryGirl.create(:user, email: 'my@email.com')
 end
 Then(/^I can not register again$/) do
   
