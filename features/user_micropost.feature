@@ -1,13 +1,11 @@
-Feature: User Micropost
+Feature: As a guest 
 
-    In order to have a micropost
-    As an existing user
-    I want to see the micropost page
+        I want to create a micropost
 
-    Scenario: user can create a micropost
-        
-        When I visit the micropost page
-        And fill in the new post
-        Then I should have created a micropost
+    Scenario:sucessfully create a micropost
+             When i go to new micropost page
+             And fill in the details
+             And post the details
+             Then micropost should be created
 
     

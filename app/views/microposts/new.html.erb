@@ -1,6 +1,7 @@
 <%= form_for(@micropost) do |f| %>
 
 <div class="field">
+<%= f.label :content, 'TextArea' %>
 <%= f.text_area :content, placeholder: "Compose new micropost...", :required => true%>
 </div>
 <%= f.submit "Post", class: "btn btn-primary" %>
