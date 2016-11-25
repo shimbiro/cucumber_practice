@@ -39,6 +39,7 @@ Given(/^am an existing user$/) do
 	# expect(User.last.email).to eq 'my@email.com'
 	# expect(page).to have_content :error_explanation
 	# FactoryGirl.create(:user, email: 'my@email.com')
+	click_button 'Log in'
 end
 Then(/^I can not register again$/) do
   
