@@ -22,8 +22,7 @@ Then(/^I should be signed up$/) do
 
   expect(User.last.email).to eq 'my@email.com'
 
-  expect(page).not_to have_content('Email already exists')
-
+ 
   expect(page).to have_content :error_explanation
   # expect(page).to have_content("Email can't be blank")
   # expect(page).to have_content("Username can't be blank")
