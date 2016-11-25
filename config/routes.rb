@@ -10,5 +10,17 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   # delete 'logout' => 'sessions#destroy'
+
+  
+  get 'microposts' => 'microposts#new'
+  get 'microposts' => 'microposts#show'
+
+
+  
+  post 'microposts' => 'microposts#create'
+  
+
+  delete 'microposts' => 'microposts#destroy'
+  
   
 end
