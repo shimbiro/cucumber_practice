@@ -3,17 +3,17 @@ When(/^i go to new micropost page$/) do
 end
 
 And(/^fill in the details$/) do
-  visit microposts_path
-  fill_in 'TextArea', with: 'My Text'
+  
+  fill_in 'Content', with: 'MyText'
 end
 
 And(/^post the details$/) do
-	visit microposts_path
+
 	click_button 'Post'
   
 end
 
 Then(/^micropost should be created$/) do
 	
-  expect(Micropost.last.text).to eq 'My Text'
+  expect(Micropost.last.text).to eq 'MyText'
 end
