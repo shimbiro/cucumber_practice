@@ -14,7 +14,7 @@ class MicropostsController < ApplicationController
 		@micropost = Micropost.new
 		if @micropost.save
 			# flash[:success] = "Micropost created!"
-			redirect_to microposts_path, notice: "Micropost created!"
+			redirect_to microposts_path 
 		else
 			# @feed_items = []
 			render 'microposts/show'
