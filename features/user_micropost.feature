@@ -5,7 +5,7 @@ Feature: User Micropost
     I want to see the micropost page
 
     Scenario: user can create a micropost
-        Given I am an existing user
+        
         When I visit the micropost page
         And fill in the new post
         Then I should have created a micropost
