@@ -3,8 +3,7 @@ When(/^i go to new micropost page$/) do
 end
 
 And(/^fill in the details$/) do
-  
-  fill_in 'Content', with: 'MyText'
+	fill_in 'Content', with: 'MyText'
 end
 
 And(/^post the details$/) do
@@ -14,6 +13,8 @@ And(/^post the details$/) do
 end
 
 Then(/^micropost should be created$/) do
-	
-  expect(Micropost.last.text).to eq 'MyText'
+	# FactoryGirl.create(content: 'MyText')
+	# expect(page).to have_content :notice
+	# Micropost.create(content: 'MyText')
+	expect(Micropost.last.content).to eq 'MyText'
 end
