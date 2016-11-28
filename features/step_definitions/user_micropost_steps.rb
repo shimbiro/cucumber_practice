@@ -1,4 +1,4 @@
-When(/^i go to new micropost page$/) do
+When(/^I go to new micropost page$/) do
  visit microposts_path
 end
 
