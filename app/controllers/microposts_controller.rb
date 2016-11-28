@@ -14,17 +14,19 @@ class MicropostsController < ApplicationController
 		@micropost = Micropost.new(micropost_params)
 		# @micropost = current_user.micropost(micropost_params)
 		if @micropost.save
-			flash[:notice] = "Micropost created!"
-			redirect_to microposts_url 
+			# flash[:notice] = "Micropost created!"
+			redirect_to microposts_url, notice:  'Micropost created!' 
 		else
 			# @feed_items = []
+			# render 'new'
 			render 'microposts/show'
 		end
 		
 	end
+
 	private
-def micropost_params
-params.require(:micropost).permit(:content)
-end
+	def micropost_params
+		params.require(:micropost).permit(:content)
+	end
 	
 end
